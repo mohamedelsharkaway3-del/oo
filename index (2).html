@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -14,16 +14,12 @@
       --shadow-3d: 0 20px 40px rgba(0,0,0,0.12), 0 5px 10px rgba(0,0,0,0.05);
       --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-
     * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
       margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif;
       background: var(--bg); color: #2d3436; line-height: 1.6; overflow-x: hidden;
     }
-
     .container { width: min(1200px, 94vw); margin: auto; }
-
-    /* تأثيرات 3D بريميوم */
     .card-3d {
       background: var(--white); border-radius: 30px;
       box-shadow: var(--shadow-3d); transition: var(--transition);
@@ -34,15 +30,11 @@
       transform: translateY(-12px) rotateX(2deg);
       box-shadow: 0 40px 80px rgba(0,0,0,0.18);
     }
-
-    /* الهيدر */
     .topbar {
       position: sticky; top: 0; z-index: 1000;
       background: rgba(255,255,255,0.85); backdrop-filter: blur(15px);
       border-bottom: 2px solid var(--green); padding: 12px 0;
     }
-
-    /* زر الواتساب العائم المتطور */
     .wa-float-container {
       position: fixed; left: 25px; bottom: 25px; z-index: 999;
       display: flex; flex-direction: column; align-items: center;
@@ -61,25 +53,19 @@
       box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
       animation: pulse 2s infinite; transition: var(--transition); text-decoration: none;
     }
-
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
-
-    /* التشخيص (Quiz) */
     .quiz-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 15px; }
     .option-btn {
       padding: 15px; border-radius: 15px; border: 2px solid #eee;
       background: #fff; cursor: pointer; font-weight: bold; transition: 0.3s;
     }
     .option-btn.active { background: var(--green); color: white; border-color: var(--green); transform: scale(1.05); }
-
-    /* السلة والطلب */
     .order-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; margin: 50px 0; }
     .summary-card { background: var(--green); color: white; border-radius: 30px; padding: 30px; position: sticky; top: 100px; }
-    
     .price-big { font-size: 2.2rem; font-weight: 900; color: var(--gold); }
     .btn-order {
       background: linear-gradient(135deg, var(--gold), #b38f00);
@@ -87,19 +73,15 @@
       width: 100%; font-size: 1.3rem; font-weight: 900; cursor: pointer;
       margin-top: 20px; transition: var(--transition); box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
-    .btn-order:hover { transform: scale(1.03); filter: brightness(1.1); }
-
     .shipping-promo {
       background: #e7f3e4; color: var(--green); padding: 15px;
       border-radius: 15px; text-align: center; font-weight: bold; margin-bottom: 20px;
       border: 1px dashed var(--green);
     }
-
     input, select, textarea {
       width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 15px;
       border: 1px solid #ddd; font-family: inherit; font-size: 1rem;
     }
-
     @media (max-width: 900px) { .order-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
@@ -143,7 +125,7 @@
             <button class="btn-order" onclick="addToCartFromQuiz()" style="margin-top:15px;">أضيفي للسلة الآن</button>
         </div>
         <div style="flex:1; min-width:250px;">
-            <img id="rec-img" src="images/hero-product.jpg" style="width:100%; border-radius:20px; box-shadow:var(--shadow-3d);" alt="المنتج">
+            <img id="rec-img" src="https://via.placeholder.com/400x300?text=Morouj+Product" style="width:100%; border-radius:20px; box-shadow:var(--shadow-3d);" alt="المنتج">
         </div>
       </div>
     </div>
@@ -164,22 +146,11 @@
 
     <div class="summary-card card-3d">
       <h3 style="border-bottom:1px solid rgba(255,255,255,0.2); padding-bottom:15px;">ملخص الطلب 🛍️</h3>
-      <div id="cart-items-list" style="min-height:100px;">
-        </div>
-      
+      <div id="cart-items-list" style="min-height:100px;"></div>
       <div style="margin-top:20px; border-top:1px solid rgba(255,255,255,0.2); padding-top:15px;">
-        <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
-            <span>الإجمالي:</span>
-            <span id="subtotal">0 جنيه</span>
-        </div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
-            <span>الشحن:</span>
-            <span id="shipping-fee">48 جنيه</span>
-        </div>
-        <div style="display:flex; justify-content:space-between; font-size:1.8rem; font-weight:bold; color:var(--gold);">
-            <span>النهائي:</span>
-            <span id="final-total">48 جنيه</span>
-        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:10px;"><span>الإجمالي:</span><span id="subtotal">0 جنيه</span></div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:10px;"><span>الشحن:</span><span id="shipping-fee">48 جنيه</span></div>
+        <div style="display:flex; justify-content:space-between; font-size:1.8rem; font-weight:bold; color:var(--gold);"><span>النهائي:</span><span id="final-total">48 جنيه</span></div>
       </div>
     </div>
   </section>
@@ -192,118 +163,52 @@
         repair: { title: "كريم الترميم", price: 159, desc: "يعالج التقصف والهيشان من أول استخدام." },
         hydrate: { title: "مرطب العميق", price: 139, desc: "لشعر ناعم كالحرير وخالي من الجفاف." }
     };
-
     let cart = [];
     let currentRec = "tasaqot";
-
-    // جمل تسويقية للفقاعة
-    const marketingAds = [
-        "شحن مجاني لو طلبتي بـ 700ج 🚚",
-        "احصلي على العبوة الثانية بخصم 50% 🔥",
-        "تركيبات طبيعية 100% 🌿",
-        "اطلبي الآن واستلمي خلال 48 ساعة ⚡"
-    ];
+    const marketingAds = ["شحن مجاني لو طلبتي بـ 700ج 🚚", "العبوة الثانية بخصم 50% 🔥", "تركيبات طبيعية 100% 🌿"];
     let adIdx = 0;
     setInterval(() => {
         const bubble = document.getElementById('marketing-bubble');
         bubble.classList.remove('show');
-        setTimeout(() => {
-            bubble.innerText = marketingAds[adIdx];
-            bubble.classList.add('show');
-            adIdx = (adIdx + 1) % marketingAds.length;
-        }, 500);
+        setTimeout(() => { bubble.innerText = marketingAds[adIdx]; bubble.classList.add('show'); adIdx = (adIdx + 1) % marketingAds.length; }, 500);
     }, 4000);
 
-    // نظام الـ Quiz
     document.querySelectorAll('.option-btn').forEach(btn => {
         btn.onclick = () => {
             document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentRec = btn.dataset.val;
-            updateQuizUI();
+            const p = PRODUCTS[currentRec];
+            document.getElementById('rec-title').innerText = p.title;
+            document.getElementById('rec-desc').innerText = p.desc;
+            document.getElementById('rec-price').innerText = p.price + " جنيه";
         };
     });
 
-    function updateQuizUI() {
-        const p = PRODUCTS[currentRec];
-        document.getElementById('rec-title').innerText = p.title;
-        document.getElementById('rec-desc').innerText = p.desc;
-        document.getElementById('rec-price').innerText = p.price + " جنيه";
-    }
-
-    function addToCartFromQuiz() {
-        cart.push(PRODUCTS[currentRec]);
-        renderCart();
-        document.getElementById('order').scrollIntoView();
-    }
+    function addToCartFromQuiz() { cart.push(PRODUCTS[currentRec]); renderCart(); document.getElementById('order').scrollIntoView(); }
 
     function renderCart() {
         const list = document.getElementById('cart-items-list');
-        const subtotalEl = document.getElementById('subtotal');
-        const shippingEl = document.getElementById('shipping-fee');
-        const finalEl = document.getElementById('final-total');
-        const promoEl = document.getElementById('shipping-promo-box');
-
-        list.innerHTML = cart.map((item, idx) => `
-            <div style="display:flex; justify-content:space-between; margin-bottom:10px; background:rgba(255,255,255,0.1); padding:10px; border-radius:10px;">
-                <span>${item.title}</span>
-                <span>${item.price} ج <button onclick="removeItem(${idx})" style="background:none; border:none; color:#ff7675; cursor:pointer; font-weight:bold;">X</button></span>
-            </div>
-        `).join('');
-
+        list.innerHTML = cart.map((item, idx) => `<div style="display:flex; justify-content:space-between; margin-bottom:10px;"><span>${item.title}</span><span>${item.price} ج <button onclick="removeItem(${idx})" style="color:red; background:none; border:none; cursor:pointer;">X</button></span></div>`).join('');
         const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
-        
-        // حساب الخصم التلقائي (العبوة التانية بخصم 50%)
-        let bundleDiscount = 0;
-        if(cart.length === 2) {
-            bundleDiscount = Math.min(cart[0].price, cart[1].price) * 0.5;
-        } else if (cart.length >= 3) {
-            bundleDiscount = Math.min(...cart.map(i => i.price)); // الأقل سعراً مجاناً
-        }
-
-        const totalAfterBundle = subtotal - bundleDiscount;
-        const shipping = totalAfterBundle >= 700 ? 0 : 48;
-
-        subtotalEl.innerText = Math.round(totalAfterBundle) + " جنيه";
-        shippingEl.innerText = shipping === 0 ? "مجاني ✨" : "48 جنيه";
-        finalEl.innerText = Math.round(totalAfterBundle + shipping) + " جنيه";
-
-        if(totalAfterBundle >= 700) {
-            promoEl.innerText = "🎉 مبروك! حصلتِ على شحن مجاني";
-            promoEl.style.background = "#d4af37"; promoEl.style.color = "#fff";
-        } else {
-            const rem = 700 - totalAfterBundle;
-            promoEl.innerText = `متبقي لكِ ${Math.round(rem)} جنيه للشحن المجاني`;
-            promoEl.style.background = "#e7f3e4"; promoEl.style.color = "#1b4332";
-        }
+        const shipping = subtotal >= 700 ? 0 : 48;
+        document.getElementById('subtotal').innerText = subtotal + " جنيه";
+        document.getElementById('shipping-fee').innerText = shipping === 0 ? "مجاني" : "48 جنيه";
+        document.getElementById('final-total').innerText = (subtotal + shipping) + " جنيه";
+        const promo = document.getElementById('shipping-promo-box');
+        if(subtotal >= 700) { promo.innerText = "مبروك! شحن مجاني"; promo.style.background = "#d4af37"; }
+        else { promo.innerText = `متبقي ${700-subtotal} ج للشحن المجاني`; promo.style.background = "#e7f3e4"; }
     }
-
-    function removeItem(idx) {
-        cart.splice(idx, 1);
-        renderCart();
-    }
+    function removeItem(idx) { cart.splice(idx, 1); renderCart(); }
 
     function sendToWhatsApp() {
         const name = document.getElementById('cust-name').value;
         const phone = document.getElementById('cust-phone').value;
-        const gov = document.getElementById('cust-gov').value;
-        const address = document.getElementById('cust-address').value;
-
-        if(!name || phone.length < 11 || !address) {
-            alert("من فضلك كملي بياناتك بشكل صحيح (الاسم، رقم الموبايل، العنوان)");
-            return;
-        }
-
-        const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+        if(!name || phone.length < 11) { alert("بيانات ناقصة!"); return; }
         const final = document.getElementById('final-total').innerText;
-        const itemsNames = cart.map(i => i.title).join(" + ");
-
-        const msg = `طلب جديد من مصنع المروج 🌿\n------------------\nالاسم: ${name}\nالهاتف: ${phone}\nالمحافظة: ${gov}\nالعنوان: ${address}\n------------------\nالمنتجات: ${itemsNames}\nالإجمالي النهائي: ${final}\n------------------\nشكراً لثقتك في المروج!`;
-        
-        window.open(`https://wa.me/201090988359?text=${encodeURIComponent(msg)}`, '_blank');
+        const msg = `طلب جديد\nالاسم: ${name}\nالهاتف: ${phone}\nالإجمالي: ${final}`;
+        window.open(`https://wa.me/201090988359?text=${encodeURIComponent(msg)}`);
     }
-
-    window.onload = () => { updateQuizUI(); renderCart(); };
   </script>
 </body>
 </html>
